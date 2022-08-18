@@ -22,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		210650D328ADD7C100E7CD5E /* storybook-demo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "storybook-demo.mp4"; sourceTree = "<group>"; };
 		216DC61028ADB50300567B6F /* StorybookIOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorybookIOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216DC61328ADB50300567B6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		216DC61728ADB50300567B6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,9 +50,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		210650D228ADD7B200E7CD5E /* DemoVideo */ = {
+			isa = PBXGroup;
+			children = (
+				210650D328ADD7C100E7CD5E /* storybook-demo.mp4 */,
+			);
+			path = DemoVideo;
+			sourceTree = "<group>";
+		};
 		216DC60728ADB50300567B6F = {
 			isa = PBXGroup;
 			children = (
+				210650D228ADD7B200E7CD5E /* DemoVideo */,
 				216DC61228ADB50300567B6F /* StorybookIOSDemo */,
 				216DC61128ADB50300567B6F /* Products */,
 			);
