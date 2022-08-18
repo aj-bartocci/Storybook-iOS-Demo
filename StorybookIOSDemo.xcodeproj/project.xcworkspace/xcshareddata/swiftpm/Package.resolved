@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Storybook",
+        "repositoryURL": "https://github.com/aj-bartocci/Storybook-SwiftUI",
+        "state": {
+          "branch": null,
+          "revision": "793ea8a7168eff29e9aa78a0dc39659a42ace6e4",
+          "version": "1.1.1"
+        }
+      },
+      {
+        "package": "SwiftUIPreviewHelpers",
+        "repositoryURL": "https://github.com/aj-bartocci/SwiftUIPreviewHelpers",
+        "state": {
+          "branch": null,
+          "revision": "2fcf59b2984eca719112de9db35ea859b2af4cd0",
+          "version": "1.0.5"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
