@@ -12,6 +12,11 @@ import SwiftUIPreviewHelpers
 @available(iOS 13, *)
 struct Storybook_Preview: PreviewProvider {
     static var previews: some View {
-        StorybookCollection()
+        Storybook.render()
+            .storybookSetGlobalControls(
+                .colorScheme,
+                .dynamicType,
+                .screenSize
+            )
     }
 }

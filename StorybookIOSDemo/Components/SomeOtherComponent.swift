@@ -40,19 +40,22 @@ import SwiftUIPreviewHelpers
 @available(iOS 14, *)
 struct SomeOtherComponent_Previews: PreviewProvider {
     
-    // For some reaosn the keyboard doesn't work for the text fields
+    // For some reason the keyboard doesn't work for the text fields
     // in preview depending on your xcode version -- Apple SwiftUI Bug
     // https://developer.apple.com/forums/thread/652463
     
-    static func light() -> some View {
+    static func base() -> some View {
         SomeOtherComponent()
         .previewSize(height: 200)
+    }
+    
+    static func light() -> some View {
+        base()
         .previewInLightMode()
     }
     
     static func dark() -> some View {
-        SomeOtherComponent()
-        .previewSize(height: 200)
+        base()
         .previewInDarkMode()
     }
     
@@ -67,6 +70,11 @@ struct SomeOtherComponent_Previews: PreviewProvider {
 @available(iOS 14, *)
 extension Storybook {
     @objc static let someOtherComponent = StorybookPage(
+        folder: "/* V2 Improvements/General Components",
+        view: SomeOtherComponent_Previews.base().storybookTitle("Some Other Component with controls")
+    )
+    
+    @objc static let someOtherComponentOld = StorybookPage(
         title: "Some Other Component",
         chapter: "General Components",
         views: [

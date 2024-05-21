@@ -21,6 +21,8 @@ class SomeButton: UIControl {
         label.font = UIFont.systemFont(ofSize: 22)
         label.textAlignment = .center
         label.textColor = .theme(.backgroundPrimary)
+        label.adjustsFontForContentSizeCategory = true
+        label.font = .preferredFont(forTextStyle: .title3)
         self.backgroundColor = .systemOrange
 
         NSLayoutConstraint.activate([
@@ -58,7 +60,8 @@ import Storybook
 
 @available(iOS 14, *)
 struct SomeButton_Previews: PreviewProvider {
-    static func light() -> some View {
+    
+    static func base() -> some View {
         UIViewPreview {
             let button = SomeButton()
             button.setTitle("Foo!")
@@ -66,17 +69,15 @@ struct SomeButton_Previews: PreviewProvider {
         }
         .padding()
         .previewSize(height: 80)
+    }
+    
+    static func light() -> some View {
+        base()
         .previewInLightMode()
     }
     
     static func dark() -> some View {
-        UIViewPreview {
-            let button = SomeButton()
-            button.setTitle("Foo!")
-            return button
-        }
-        .padding()
-        .previewSize(height: 80)
+        base()
         .previewInDarkMode()
     }
     
@@ -91,6 +92,11 @@ struct SomeButton_Previews: PreviewProvider {
 @available(iOS 14, *)
 extension Storybook {
     @objc static let someButton = StorybookPage(
+        folder: "/* V2 Improvements/General Components",
+        view: SomeButton_Previews.base().storybookTitle("Button")
+    )
+    
+    @objc static let someButtonOld = StorybookPage(
         title: "Button",
         chapter: "General Components",
         views: [

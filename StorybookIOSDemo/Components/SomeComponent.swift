@@ -9,8 +9,19 @@ import UIKit
 
 class SomeComponent: UIView {
     
-    let titleLabel = UILabel()
-    let subtitleLabel = UILabel()
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.adjustsFontForContentSizeCategory = true
+        label.font = .preferredFont(forTextStyle: .body)
+        return label
+    }()
+    
+    let subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.adjustsFontForContentSizeCategory = true
+        label.font = .preferredFont(forTextStyle: .body)
+        return label
+    }()
    
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,7 +60,7 @@ import Storybook
 @available(iOS 14, *)
 struct SomeComponent_Previews: PreviewProvider {
     
-    static func light() -> some View {
+    static func base() -> some View {
         UIViewPreview {
             let component = SomeComponent()
             component.titleLabel.text = "Some Title"
@@ -57,18 +68,16 @@ struct SomeComponent_Previews: PreviewProvider {
             return component
         }
         .padding()
+    }
+    
+    static func light() -> some View {
+        base()
         .previewSize(height: 100)
         .previewInLightMode()
     }
     
     static func dark() -> some View {
-        UIViewPreview {
-            let component = SomeComponent()
-            component.titleLabel.text = "Some Title"
-            component.subtitleLabel.text = "Some subtitle"
-            return component
-        }
-        .padding()
+        base()
         .previewSize(height: 100)
         .previewInDarkMode()
     }
@@ -95,8 +104,44 @@ struct SomeComponent_Previews: PreviewProvider {
 }
 
 @available(iOS 14, *)
+struct ControlledSomeComponent: View {
+    @State var title = "Some Title"
+    @State var subtitle = "Some subtitle"
+    
+    var body: some View {
+        UIViewPreview {
+            let component = SomeComponent()
+            component.titleLabel.text = title
+            component.subtitleLabel.text = subtitle
+            return component
+        }
+        // UIViewPreview needs to be forced to update
+        // since the state lives outside of UIKit
+        .id(title + subtitle)
+        .padding()
+        .storybookAddControls(
+            .custom(StorybookControl(
+                id: "SomeComponentControl",
+                view: {
+                    VStack(alignment: .leading) {
+                        TextFieldControl(placeholder: "Title", text: $title)
+                        TextFieldControl(placeholder: "Subtitle", text: $subtitle)
+                    }
+                    .font(.system(size: 16))
+                }
+            ))
+        )
+    }
+}
+
+@available(iOS 14, *)
 extension Storybook {
     @objc static let someComponent = StorybookPage(
+        folder: "/* V2 Improvements/Some Feature",
+        view: ControlledSomeComponent().storybookTitle("Some Component with controls")
+    )
+    
+    @objc static let someComponentOld = StorybookPage(
         title: "Some Component",
         chapter: "Some Feature",
         views: [

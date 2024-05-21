@@ -91,6 +91,13 @@ extension Storybook {
     }
     
     @objc static let colorPalette = StorybookPage(
+        folder: "/* V2 Improvements/Design",
+        views: [
+            ColorPalette().storybookTitle("Color Palette with controls")
+        ]
+    )
+    
+    @objc static let colorPaletteOld = StorybookPage(
         title: "Color Palette",
         chapter: "Design",
         views: [

@@ -1,25 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Storybook",
-        "repositoryURL": "https://github.com/aj-bartocci/Storybook-SwiftUI",
-        "state": {
-          "branch": null,
-          "revision": "793ea8a7168eff29e9aa78a0dc39659a42ace6e4",
-          "version": "1.1.1"
-        }
-      },
-      {
-        "package": "SwiftUIPreviewHelpers",
-        "repositoryURL": "https://github.com/aj-bartocci/SwiftUIPreviewHelpers",
-        "state": {
-          "branch": null,
-          "revision": "2fcf59b2984eca719112de9db35ea859b2af4cd0",
-          "version": "1.0.5"
-        }
+  "pins" : [
+    {
+      "identity" : "storybook-swiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/aj-bartocci/Storybook-SwiftUI",
+      "state" : {
+        "revision" : "b7718cf63dcfe53c22f2b87061f3c4b0f476265a",
+        "version" : "2.0.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "swiftuipreviewhelpers",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/aj-bartocci/SwiftUIPreviewHelpers",
+      "state" : {
+        "branch" : "experimental",
+        "revision" : "99febf7468e5b53d82ded21c5968b1bbd7536d81"
+      }
+    }
+  ],
+  "version" : 2
 }

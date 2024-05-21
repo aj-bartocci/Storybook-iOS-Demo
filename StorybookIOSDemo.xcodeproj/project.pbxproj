@@ -36,6 +36,7 @@
 		216DC63828ADBAEB00567B6F /* SomeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeComponent.swift; sourceTree = "<group>"; };
 		216DC63A28ADBAF000567B6F /* SomeOtherComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeOtherComponent.swift; sourceTree = "<group>"; };
 		216DC63C28ADBAF400567B6F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		219204772BFC26D200ED3EEA /* storybook-demo-v2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "storybook-demo-v2.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		210650D228ADD7B200E7CD5E /* DemoVideo */ = {
 			isa = PBXGroup;
 			children = (
+				219204772BFC26D200ED3EEA /* storybook-demo-v2.mp4 */,
 				210650D328ADD7C100E7CD5E /* storybook-demo.mp4 */,
 			);
 			path = DemoVideo;
@@ -361,6 +363,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 25NQ367WU2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StorybookIOSDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -368,7 +371,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,6 +392,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 25NQ367WU2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StorybookIOSDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -396,7 +400,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,15 +443,15 @@
 			repositoryURL = "https://github.com/aj-bartocci/Storybook-SwiftUI";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 2.0.0;
 			};
 		};
 		216DC62D28ADB59000567B6F /* XCRemoteSwiftPackageReference "SwiftUIPreviewHelpers" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/aj-bartocci/SwiftUIPreviewHelpers";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = experimental;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
